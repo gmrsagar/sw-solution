@@ -1,4 +1,4 @@
-import model from '../models';
+import model from '../db/models';
 const { job, category, suburb } = model;
 
 class Jobs {
@@ -7,10 +7,14 @@ class Jobs {
     return job.findAll({
       attributes: [
         'contact_name',
+        'status',
         'created_at',
         'id',
         'description',
-        'price'
+        'price',
+        'contact_email',
+        'contact_phone',
+        
       ],
       include: [
         { model: category, attributes: [ 'name' ] },
