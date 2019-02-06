@@ -1,4 +1,4 @@
-## Tradie [![Maintainability](https://api.codeclimate.com/v1/badges/48e1d9356277eeca3ffe/maintainability)](https://codeclimate.com/github/gmrsagar/sw-solution/maintainability)
+## Tradie
 
 
 # How to run this app
