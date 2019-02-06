@@ -1,5 +1,20 @@
 ## Design Decisions
 
+# How to run this app
+
+Run `docker-compose up -d` from the root_directory
+* UI should run at http://localhost:3000 
+* And, MySQL should run at localhost:3306
+    * The username is `root`
+    * The password is `hipages`
+
+## For Server (Last minute error with docker)
+
+* Go to root_directory > server
+* npm start
+* Server should now run at http://localhost:8080
+
+
 # Listed below is the explanation of the design decisions made during the development of the app.
 
 ## Backend API
