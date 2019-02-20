@@ -13,7 +13,7 @@ class App extends Component {
       invited: [],
       accepted: [],
       selected: 'invited',
-      error: ''
+      error: '',
     }
   }
 
@@ -36,24 +36,37 @@ class App extends Component {
   }
 
   updateJob = (id, status) => {
-    axios.put('http://localhost:8080/api/jobs/'+id, {
-      status: status
+    // if(this.state.acceptedTradie < 3) {
+    // axios.put('http://localhost:8080/api/jobs/'+id, {
+    //   status: status
+    // })
+    // .then( res => {
+    //   let jobs = this.state.jobs;
+    //   let newJobs = jobs.map( job => {
+    //     if( job.id === id ) {
+    //       job.status = status
+    //     }
+    //     return job
+    //   })
+    //   this.setState({ jobs: newJobs }, () => {
+    //     this.filterAccepted()
+    //     this.filterInvited()
+    //   })
+    // })
+    // .catch( error => {
+    //   this.setState({ error })
+    // })
+
+    axios.post('http://localhost:8080/api/accept/', {
+      job_id: id,
+      tradie_id: 2,
+      status: 'accepted'
     })
     .then( res => {
-      let jobs = this.state.jobs;
-      let newJobs = jobs.map( job => {
-        if( job.id === id ) {
-          job.status = status
-        }
-        return job
-      })
-      this.setState({ jobs: newJobs }, () => {
-        this.filterAccepted()
-        this.filterInvited()
-      })
+      console.log(res)
     })
-    .catch( error => {
-      this.setState({ error })
+    .catch( err => {
+      console.log(err)
     })
   }
 

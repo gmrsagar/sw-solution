@@ -14,6 +14,14 @@ CREATE TABLE `categories` (
     KEY `idx_categories_parent_category` (`parent_category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `accepteds` (
+    `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+    `job_id` int(11) unsigned NOT NULL,
+    `tradie_id` int(11) unsigned NOT NULL,
+    `status` varchar(50) NOT NULL DEFAULT 'waiting',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `jobs` (
     `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
     `status` varchar(50) NOT NULL DEFAULT 'new',
